@@ -1,7 +1,5 @@
 package com.javainuse.test;
 
-
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -24,35 +22,32 @@ import org.springframework.web.context.WebApplicationContext;
 
 public class TestWebApp extends SpringBootHelloWorldTests {
 
- @Autowired
+	@Autowired
 
- private WebApplicationContext webApplicationContext;
+	private WebApplicationContext webApplicationContext;
 
- private MockMvc mockMvc;
+	private MockMvc mockMvc;
 
- @Before
+	@Before
 
- public void setup() {
+	public void setup() {
 
- mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
- }
+	}
 
- @Test
+	@Test
 
- public void testEmployee() throws Exception {
+	public void testEmployee() throws Exception {
 
- mockMvc.perform(get("/customer")).andExpect(status().isOk())
+		mockMvc.perform(get("/customer")).andExpect(status().isOk())
 
-  .andExpect(content().contentType("application/json;charset=UTF-8"))
+				.andExpect(content().contentType("application/json;charset=UTF-8"))
 
-  .andExpect(jsonPath("$.cust_Name").value("Uttam")).andExpect(jsonPath("$.cust_Address").value("Indore"))
+				.andExpect(jsonPath("$.cust_Name").value("Uttam")).andExpect(jsonPath("$.cust_Address").value("Indore"))
 
-  .andExpect(jsonPath("$.cust_Id").value("1")).andExpect(jsonPath("$.cust_Pin").value(465333));
+				.andExpect(jsonPath("$.cust_Id").value("1")).andExpect(jsonPath("$.cust_Pin").value(465333));
 
- }
+	}
 
 }
-
-
-
