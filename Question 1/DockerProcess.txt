@@ -1,0 +1,6 @@
+Process.....................
+
+1) docker image ls 
+2)  docker run -p 9090:8080 spring-boot-docker-ujjw.jar
+
+   
