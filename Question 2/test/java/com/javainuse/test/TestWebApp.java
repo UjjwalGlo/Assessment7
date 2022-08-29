@@ -44,9 +44,9 @@ public class TestWebApp extends SpringBootHelloWorldTests {
 
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 
-				.andExpect(jsonPath("$.cust_Name").value("Uttam")).andExpect(jsonPath("$.cust_Address").value("Indore"))
+				.andExpect(jsonPath("$.cust_Name").value("Ujjwal")).andExpect(jsonPath("$.cust_Address").value("Kanpur"))
 
-				.andExpect(jsonPath("$.cust_Id").value("1")).andExpect(jsonPath("$.cust_Pin").value(465333));
+				.andExpect(jsonPath("$.cust_Id").value("100")).andExpect(jsonPath("$.cust_Pin").value(208005));
 
 	}
 
